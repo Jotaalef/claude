@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radar de Trends</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1>Radar de Trends</h1>
+      <p class="sub">Conteúdos em crescimento nas redes, por nicho</p>
+    </div>
+    <div class="actions">
+      <span id="updated" class="updated">—</span>
+      <button id="collect" class="btn">Coletar agora</button>
+    </div>
+  </header>
+
+  <div id="demo-banner" class="demo-banner" hidden>
+    <strong>MODO DEMONSTRATIVO.</strong> Todos os itens abaixo são fictícios, gerados localmente para testar a interface.
+    Configure <code>YOUTUBE_API_KEY</code> no arquivo <code>.env</code> para ver dados reais do YouTube.
+  </div>
+
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+
+  <main>
+    <section class="toolbar" id="toolbar">
+      <label>Rede
+        <select id="platform"><option value="all">Todas na amostra</option></select>
+      </label>
+      <label>Ordenar por
+        <select id="sort">
+          <option value="growth">Crescimento (visualizações/hora entre coletas)</option>
+          <option value="views">Visualizações totais</option>
+        </select>
+      </label>
+    </section>
+
+    <aside class="sample-note" id="sample-note"></aside>
+    <div id="error" class="error" hidden></div>
+    <ol class="list" id="list"></ol>
+    <p class="empty" id="empty" hidden></p>
+  </main>
+
+  <section class="status">
+    <h2>Status das redes</h2>
+    <p class="hint">Somente redes com integração oficial verificada e ativa geram dados reais.</p>
+    <ul id="platforms" class="platforms"></ul>
+  </section>
+
+  <dialog id="history">
+    <form method="dialog"><button class="close" aria-label="Fechar">×</button></form>
+    <h3 id="history-title"></h3>
+    <div id="history-body"></div>
+  </dialog>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
